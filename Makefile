@@ -31,7 +31,7 @@ game: $(OBJS)
 # 如果make play运行失败，请检查qemu的安装
 # 也可以修改这里的脚本，用其他类型的模拟器启动game.img
 play: game.img
-	$(QEMU) -serial stdio game.img
+	$(QEMU) -m 32 -serial stdio game.img
 debug: game.img
 	$(QEMU) -serial stdio -s -S game.img
 
