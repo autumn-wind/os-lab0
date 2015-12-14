@@ -3,18 +3,14 @@
 char hexBoard[] = "0123456789abcdef";
 
 void printInterger(void (*printer)(char), const int num, const int base){
-	if(num + 1 == -2147483647){
-		char cc[] = "-2147483648";
-		int i = 0;
-		for(; cc[i] != '\0'; i++)	printer(cc[i]);
-		return;
-	}
-	int absNum = num;
-	if(num < 0){
-			printer('-');
-			absNum = -absNum;
-		}
-	int numBase = 1;
+	unsigned absNum;
+	if(num < 0 && base == 10){
+		long long tmp = num;
+		absNum = -tmp;
+		printer('-');
+	}else
+		absNum = num;
+	unsigned numBase = 1;
 	while(absNum / numBase >= base)
 		numBase *= base;
 	while(numBase > 0){
