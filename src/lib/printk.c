@@ -1,12 +1,53 @@
 #include "common.h"
 
+char hexBoard[] = "0123456789abcdef";
+
+void printInterger(void (*printer)(char), const int num, const int base){
+	if(num + 1 == -2147483647){
+		char cc[] = "-2147483648";
+		int i = 0;
+		for(; cc[i] != '\0'; i++)	printer(cc[i]);
+		return;
+	}
+	int absNum = num;
+	if(num < 0){
+			printer('-');
+			absNum = -absNum;
+		}
+	int numBase = 1;
+	while(absNum / numBase >= base)
+		numBase *= base;
+	while(numBase > 0){
+		printer(hexBoard[absNum / numBase]);
+		absNum %= numBase;
+		numBase /= base;
+	}
+}
+
 /* implement this function to support printk */
 void vfprintf(void (*printer)(char), const char *ctl, void **args) {
-	const char *str = __FUNCTION__;
-	for(;*str != '\0'; str ++) printer(*str);
+	const char *str = ctl;
+	for(;*str != '\0'; str ++){
+		if(*str != '%'){
+			printer(*str);
+		}else{
+			str++;
+			if(*str == 's'){
+				char *s = *(char **)args++;
+				for(; *s != '\0'; s++) printer(*s);
+			}else if(*str == 'c'){
+				char c = *(char *)args++;
+				printer(c);
+			}else if(*str == 'd'){
+				int d = *(int *)args++;
+				printInterger(printer, d, 10);
+			}else if(*str == 'x'){
+				int x = *(int *)args++;
+				printInterger(printer, x, 16);
+			}
+		}
+	}
 
-	str = ": vfprintf() is not implemented!\n";
-	for(;*str != '\0'; str ++) printer(*str);
 }
 
 extern void serial_printc(char);
