@@ -3,7 +3,7 @@
 char hexBoard[] = "0123456789abcdef";
 
 void printInterger(void (*printer)(char), const int num, const int base){
-	unsigned absNum;
+	/*unsigned absNum;
 	if(num < 0 && base == 10){
 		long long tmp = num;
 		absNum = -tmp;
@@ -17,6 +17,32 @@ void printInterger(void (*printer)(char), const int num, const int base){
 		printer(hexBoard[absNum / numBase]);
 		absNum %= numBase;
 		numBase /= base;
+	}*/
+	if(base == 16){
+		unsigned absNum = num, numBase = 1;
+		while(absNum / numBase >= base)
+			numBase *= base;
+		while(numBase != 0){
+			printer(hexBoard[absNum / numBase]);
+			absNum %= numBase;
+			numBase /= base;
+		}
+	}else if(base == 10){
+		int absNum = num, numBase = 1;
+		if(absNum < 0){
+			printer('-');
+			while(absNum / numBase <= -base)
+				numBase *= base;
+			numBase = -numBase;
+		}else{
+			while(absNum / numBase >= base)
+				numBase *= base;
+		}
+		while(numBase != 0){
+			printer(hexBoard[absNum / numBase]);
+			absNum %= numBase;
+			numBase /= base;
+		}
 	}
 }
 
@@ -43,7 +69,6 @@ void vfprintf(void (*printer)(char), const char *ctl, void **args) {
 			}
 		}
 	}
-
 }
 
 extern void serial_printc(char);

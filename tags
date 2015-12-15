@@ -113,6 +113,7 @@ get_fps	src/game/game.c	/^get_fps() {$/;"	f
 get_hit	src/game/effect.c	/^get_hit(void) {$/;"	f
 get_miss	src/game/effect.c	/^get_miss(void) {$/;"	f
 head	src/game/effect.c	/^static fly_t head = NULL;$/;"	v	file:
+hexBoard	src/lib/printk.c	/^char hexBoard[] = "0123456789abcdef";$/;"	v
 hit	src/game/effect.c	/^static int hit = 0, miss = 0;$/;"	v	file:
 idt	src/irq/idt.c	/^struct GateDescriptor idt[NR_IRQ];$/;"	v	typeref:struct:GateDescriptor
 in_byte	boot/boot.h	/^in_byte(short port) {$/;"	f
@@ -154,6 +155,7 @@ phoff	boot/boot.h	/^	unsigned int   phoff;$/;"	m	struct:ELFHeader
 prepare_buffer	src/device/video.c	/^prepare_buffer(void) {$/;"	f
 present	include/x86/memory.h	/^	uint32_t present          : 1;$/;"	m	struct:GateDescriptor
 press_key	src/game/keyboard.c	/^press_key(int scan_code) {$/;"	f
+printInterger	src/lib/printk.c	/^void printInterger(void (*printer)(char), const int num, const int base){$/;"	f
 printk	src/lib/printk.c	/^printk(const char *ctl, ...) {$/;"	f
 privilege_level	include/x86/memory.h	/^	uint32_t privilege_level  : 2;$/;"	m	struct:GateDescriptor
 query_key	src/game/keyboard.c	/^query_key(int index) {$/;"	f

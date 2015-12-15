@@ -1,4 +1,4 @@
-cscope 15 $HOME/os-labs/os-lab0 -q 0000000544 0000046167
+cscope 15 $HOME/os-labs/os-lab0 -q 0000000551 0000048716
 	@boot/asm.h
 
 2 
@@ -3722,80 +3722,84 @@ off£t
 ();
 
 37 
-vec0
+úq1
 ();
 
 38 
-vec1
+vec0
 ();
 
 39 
-vec2
+vec1
 ();
 
 40 
-vec3
+vec2
 ();
 
 41 
-vec4
+vec3
 ();
 
 42 
-vec5
+vec4
 ();
 
 43 
-vec6
+vec5
 ();
 
 44 
-vec7
+vec6
 ();
 
 45 
-vec8
+vec7
 ();
 
 46 
-vec9
+vec8
 ();
 
 47 
-vec10
+vec9
 ();
 
 48 
-vec11
+vec10
 ();
 
 49 
-vec12
+vec11
 ();
 
 50 
+vec12
+();
+
+51 
 vec13
 ();
 
-52 
+53 
 úq_em±y
 ();
 
-54 
+55 
 	$öô_idt
 () {
 
-55 
+56 
 i
 ;
 
-57 
+58 
 i
  = 0; i < 
 NR_IRQ
 ; i ++) {
 
-58 
+59 
 	`£t_å≠
 (
 idt
@@ -3811,7 +3815,7 @@ uöt32_t
 DPL_KERNEL
 );
 
-62 
+63 
 	`£t_å≠
 (
 idt
@@ -3825,7 +3829,7 @@ vec0
 DPL_KERNEL
 );
 
-63 
+64 
 	`£t_å≠
 (
 idt
@@ -3839,7 +3843,7 @@ vec1
 DPL_KERNEL
 );
 
-64 
+65 
 	`£t_å≠
 (
 idt
@@ -3853,7 +3857,7 @@ vec2
 DPL_KERNEL
 );
 
-65 
+66 
 	`£t_å≠
 (
 idt
@@ -3867,7 +3871,7 @@ vec3
 DPL_KERNEL
 );
 
-66 
+67 
 	`£t_å≠
 (
 idt
@@ -3881,7 +3885,7 @@ vec4
 DPL_KERNEL
 );
 
-67 
+68 
 	`£t_å≠
 (
 idt
@@ -3895,7 +3899,7 @@ vec5
 DPL_KERNEL
 );
 
-68 
+69 
 	`£t_å≠
 (
 idt
@@ -3909,7 +3913,7 @@ vec6
 DPL_KERNEL
 );
 
-69 
+70 
 	`£t_å≠
 (
 idt
@@ -3923,7 +3927,7 @@ vec7
 DPL_KERNEL
 );
 
-70 
+71 
 	`£t_å≠
 (
 idt
@@ -3937,7 +3941,7 @@ vec8
 DPL_KERNEL
 );
 
-71 
+72 
 	`£t_å≠
 (
 idt
@@ -3951,7 +3955,7 @@ vec9
 DPL_KERNEL
 );
 
-72 
+73 
 	`£t_å≠
 (
 idt
@@ -3965,7 +3969,7 @@ vec10
 DPL_KERNEL
 );
 
-73 
+74 
 	`£t_å≠
 (
 idt
@@ -3979,7 +3983,7 @@ vec11
 DPL_KERNEL
 );
 
-74 
+75 
 	`£t_å≠
 (
 idt
@@ -3993,7 +3997,7 @@ vec12
 DPL_KERNEL
 );
 
-75 
+76 
 	`£t_å≠
 (
 idt
@@ -4007,7 +4011,7 @@ vec13
 DPL_KERNEL
 );
 
-78 
+79 
 	`£t_öå
 (
 idt
@@ -4021,13 +4025,27 @@ uöt32_t
 DPL_KERNEL
 );
 
-81 
+80 
+	`£t_öå
+(
+idt
+ + 33, 
+SEG_KERNEL_CODE
+, (
+uöt32_t
+)
+úq1
+, 
+DPL_KERNEL
+);
+
+83 
 	`ßve_idt
 (
 idt
 , (idt));
 
-82 
+84 
 	}
 }
 
@@ -4349,7 +4367,155 @@ TRUE
 	~"comm⁄.h
 "
 
-4 
+3 
+	ghexBﬂrd
+[] = "0123456789abcdef";
+
+5 
+¥ötI¡îgî
+((*
+¥öãr
+)(), c⁄° 
+num
+, c⁄° 
+ba£
+){
+
+21 if(
+ba£
+ == 16){
+
+22 
+absNum
+ = 
+num
+, 
+numBa£
+ = 1;
+
+23 
+absNum
+ / 
+numBa£
+ >
+ba£
+)
+
+24 
+numBa£
+ *
+ba£
+;
+
+25 
+numBa£
+ != 0){
+
+26 
+	`¥öãr
+(
+hexBﬂrd
+[
+absNum
+ / 
+numBa£
+]);
+
+27 
+absNum
+ %
+numBa£
+;
+
+28 
+numBa£
+ /
+ba£
+;
+
+30 }if(
+ba£
+ == 10){
+
+31 
+absNum
+ = 
+num
+, 
+numBa£
+ = 1;
+
+32 if(
+absNum
+ < 0){
+
+33 
+	`¥öãr
+('-');
+
+34 
+absNum
+ / 
+numBa£
+ <-
+ba£
+)
+
+35 
+numBa£
+ *
+ba£
+;
+
+36 
+numBa£
+ = -numBase;
+
+38 
+absNum
+ / 
+numBa£
+ >
+ba£
+)
+
+39 
+numBa£
+ *
+ba£
+;
+
+41 
+numBa£
+ != 0){
+
+42 
+	`¥öãr
+(
+hexBﬂrd
+[
+absNum
+ / 
+numBa£
+]);
+
+43 
+absNum
+ %
+numBa£
+;
+
+44 
+numBa£
+ /
+ba£
+;
+
+47 
+	}
+}
+
+50 
 vÂrötf
 ((*
 ¥öãr
@@ -4359,55 +4525,125 @@ vÂrötf
 ¨gs
 ) {
 
-5 c⁄° *
+51 c⁄° *
 °r
  = 
 ˘l
 ;
 
-6 ;*
+52 ;*
 °r
- !'\0'; så ++Ë
+ != '\0'; str ++){
+
+53 if(*
+°r
+ != '%'){
+
+54 
 	`¥öãr
-(*str);
-
-26 
+(*
 °r
- = ": vfprintf() isÇot implemented!\n";
+);
 
-27 ;*
+56 
 °r
- !'\0'; så ++Ë
+++;
+
+57 if(*
+°r
+ == 's'){
+
+58 *
+s
+ = *(**)
+¨gs
+++;
+
+59 ; *
+s
+ !'\0'; s++Ë
 	`¥öãr
-(*str);
+(*s);
 
-28 
+60 }if(*
+°r
+ == 'c'){
+
+61 
+c
+ = *(*)
+¨gs
+++;
+
+62 
+	`¥öãr
+(
+c
+);
+
+63 }if(*
+°r
+ == 'd'){
+
+64 
+d
+ = *(*)
+¨gs
+++;
+
+65 
+	`¥ötI¡îgî
+(
+¥öãr
+, 
+d
+, 10);
+
+66 }if(*
+°r
+ == 'x'){
+
+67 
+x
+ = *(*)
+¨gs
+++;
+
+68 
+	`¥ötI¡îgî
+(
+¥öãr
+, 
+x
+, 16);
+
+72 
 	}
 }
 
-30 
+74 
 £rül_¥ötc
 ();
 
-33 
+77 
 __©åibuã__
 ((
 __noölöe__
 ))
 
-34 
+78 
 	$¥ötk
 (c⁄° *
 ˘l
 , ...) {
 
-35 **
+79 **
 ¨gs
  = (**)&
 ˘l
  + 1;
 
-36 
+80 
 	`vÂrötf
 (
 £rül_¥ötc
@@ -4417,7 +4653,7 @@ __noölöe__
 ¨gs
 );
 
-37 
+81 
 	}
 }
 
@@ -4665,19 +4901,103 @@ keybﬂrd_evít
 	`¥ötk
 ("game start!\n");
 
-40 
+18 
+	`¥ötk
+("PrintkÅest begin...\n");
+
+19 
+	`¥ötk
+("theánswer should be:\n");
+
+20 
+	`¥ötk
+("#######################################################\n");
+
+21 
+	`¥ötk
+("Hello, welcomeÅo OSlab! I'mÅhe body ofÅhe game. ");
+
+22 
+	`¥ötk
+("BootblockÜoads meÅoÅhe memoryÖosition of 0x100000,ánd MakefileálsoÅells meÅhat I'mátÅheÜocation of 0x100000. ");
+
+23 
+	`¥ötk
+("~!@#$^&*()_+`1234567890-=...... ");
+
+24 
+	`¥ötk
+("Now I willÅest yourÖrintk: ");
+
+25 
+	`¥ötk
+("1 + 1 = 2, 123 * 456 = 56088\n0, -1, -2147483648, -1412505855, -32768, 102030\n0, ffffffff, 80000000,ábcdef01, ffff8000, 18e8e\n");
+
+26 
+	`¥ötk
+("#######################################################\n");
+
+27 
+	`¥ötk
+("youránswer:\n");
+
+28 
+	`¥ötk
+("=======================================================\n");
+
+29 
+	`¥ötk
+("%s %s%scome %co%s", "Hello,", "", "wel", 't', " ");
+
+30 
+	`¥ötk
+("%c%c%c%c%c! ", 'O', 'S', 'l', 'a', 'b');
+
+31 
+	`¥ötk
+("I'mÅhe %s of %s. %s 0x%x, %s 0x%x. ", "body", "the game", "BootblockÜoads meÅoÅhe memoryÖosition of",
+
+33 
+	`¥ötk
+("~!@#$^&*()_+`1234567890-=...... ");
+
+34 
+	`¥ötk
+("Now I willÅest yourÖrintk: ");
+
+35 
+	`¥ötk
+("%d + %d = %d, %d * %d = %d\n", 1, 1, 1 + 1, 123, 456, 123 * 456);
+
+36 
+	`¥ötk
+("%d, %d, %d, %d, %d, %d\n", 0, 0xffffffff, 0x80000000, 0xabcedf01, -32768, 102030);
+
+37 
+	`¥ötk
+("%x, %x, %x, %x, %x, %x\n", 0, 0xffffffff, 0x80000000, 0xabcedf01, -32768, 102030);
+
+38 
+	`¥ötk
+("=======================================================\n");
+
+39 
+	`¥ötk
+("TestÉnd!!! GoodÜuck!!!\n");
+
+41 
 	`íabÀ_öãºu±
 ();
 
-41 
+42 
 	`maö_lo›
 ();
 
-42 
+43 
 	`as£π
 (0);
 
-43 
+44 
 	}
 }
 
