@@ -47,14 +47,14 @@ main_loop(void) {
 
 	while (TRUE) {
 		wait_for_interrupt();
-		disable_interrupt();
+		/*disable_interrupt();*/
 		if (now == tick) {
-			enable_interrupt();
+			/*enable_interrupt();*/
 			continue;
 		}
 		assert(now < tick);
 		target = tick; /* now总是小于tick，因此我们需要“追赶”当前的时间 */
-		enable_interrupt();
+		/*enable_interrupt();*/
 
 		redraw = FALSE;
 		while (update_keypress())

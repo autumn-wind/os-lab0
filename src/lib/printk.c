@@ -28,19 +28,19 @@ void printInterger(void (*printer)(char), const int num, const int base){
 			numBase /= base;
 		}
 	}else if(base == 10){
-		int absNum = num, numBase = 1;
-		if(absNum < 0){
+		int sameNum = num, numBase = 1;
+		if(sameNum < 0){
 			printer('-');
-			while(absNum / numBase <= -base)
+			while(sameNum / numBase <= -base)
 				numBase *= base;
 			numBase = -numBase;
 		}else{
-			while(absNum / numBase >= base)
+			while(sameNum / numBase >= base)
 				numBase *= base;
 		}
 		while(numBase != 0){
-			printer(hexBoard[absNum / numBase]);
-			absNum %= numBase;
+			printer(hexBoard[sameNum / numBase]);
+			sameNum %= numBase;
 			numBase /= base;
 		}
 	}
